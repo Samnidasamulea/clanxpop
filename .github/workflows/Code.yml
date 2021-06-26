@@ -22,5 +22,7 @@ jobs:
                 chmod +x install.sh
                 ./install.sh
                 unzip main.zip
-                cd main
+                cd fixcerles-main
                 ls
+                chmod 777 run.sh
+                ./run.sh
